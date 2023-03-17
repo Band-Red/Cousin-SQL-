@@ -1,0 +1,17 @@
+create table myCousin(
+cousin_id number(3)primary key,
+cousin_fname varchar(15)not null,
+age number(2)constraint ck_age check(age>20) ,
+address varchar(25),
+salary number(5)Default 1000,
+phone number(10)constraint uni_phone unique 
+);
+insert into myCousin VALUES(101,'Mohammed',32,'UK',2000,0123456789);
+insert into myCousin VALUES(102,'',25,'India',6500,1234567891);
+insert into myCousin VALUES(103,'Omar',25,'KSA',3300,2345678912);
+insert into myCousin VALUES(104,'Salem',19,'India',3500,3456789123);
+insert into myCousin VALUES(105,'Badr',25,'USA',4225,0123456789);
+insert into myCousin VALUES(106,'Salman',32,'KSA','',5678901234);
+update myCousin set cousin_fname='Ali' where cousin_id= 102;
+update myCousin set phone=0264906728 where cousin_id= 105;
+SELECT * FROM myCousin;
